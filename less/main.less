@@ -14,6 +14,7 @@
 body{
 	padding-top:80px;
 	margin:0px;
+	background:#333;
 
 	& #nav{
 		position:fixed;
@@ -110,12 +111,14 @@ body{
 
 			& .window{
 				background:#FFF;
-				// height:100%;
 				.box-sizing(border-box);
 				padding:10px 20px;
 
 				.user-select(none);
 				cursor:default;
+
+				overflow-y:scroll;
+				height:100%;
 
 				& .logo{
 					font-size:30px;
@@ -152,7 +155,7 @@ body{
 						width:50%;
 						padding:40px;
 						.box-sizing(border-box);
-						background:rgb(189,212,222);
+						background:#cde1ea;
 					}
 
 					& .rightblock{
@@ -167,7 +170,7 @@ body{
 							width:100%;
 							margin-bottom:13px;
 							height:8px;
-							background:rgb(189,212,222);
+							background:#cde1ea;
 
 							&:last-of-type{
 								width:60%;
@@ -210,6 +213,19 @@ body{
 						top:0px;
 						left:0px;
 						opacity:0.8;
+						border-radius:50%;
+					}
+
+					& .stars{
+						float:left;
+						width:100%;
+						height:15px;
+						margin-bottom:12px;
+
+						& img{
+							width:15px;
+							height:15px;
+						}
 					}
 
 					& .line{
@@ -217,7 +233,7 @@ body{
 						width:100%;
 						margin-bottom:12px;
 						height:5px;
-						background:rgb(189,212,222);
+						background:#cde1ea;
 
 						&:last-of-type{
 							width:60%;
