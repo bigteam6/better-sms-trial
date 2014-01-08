@@ -1,0 +1,238 @@
+@-webkit-keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  padding-top: 80px;
+  margin: 0px;
+}
+body #nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  background: #FFF;
+  color: #000;
+  line-height: 80px;
+  border-bottom: 1px solid #CDCDCD;
+  z-index: 999998;
+  font-family: 'Colfax';
+}
+body #nav #logo {
+  float: left;
+  font-size: 32px;
+}
+body #nav #links {
+  margin: 0;
+  float: right;
+  width: auto;
+}
+body #nav #links a li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+body #nav #links a li:hover {
+  background: #F0F0F0;
+}
+body #nav a {
+  color: #000;
+}
+body #hero {
+  background: #F0F0F0;
+  margin: 0px;
+}
+body #hero h1 {
+  text-align: center;
+  font-weight: normal;
+  font-family: 'Colfax';
+  font-size: 40px;
+  color: #000;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+body #hero h1 .underscore {
+  -webkit-animation: glow 0.8s infinite;
+  -moz-animation: glow 0.8s infinite;
+  -o-animation: glow 0.8s infinite;
+  animation: glow 0.8s infinite;
+}
+body #hero .mac {
+  width: 700px;
+  margin: 0 auto;
+  height: 460px;
+  border-radius: 5px;
+  background: #DEDEDE;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  position: relative;
+}
+body #hero .mac .uibutton {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 15px;
+  background: #888;
+}
+body #hero .mac .uibutton.red {
+  left: 15px;
+}
+body #hero .mac .uibutton.yellow {
+  left: 35px;
+}
+body #hero .mac .uibutton.green {
+  left: 55px;
+}
+body #hero .mac .window {
+  background: #FFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+body #hero .mac .window .logo {
+  font-size: 30px;
+  font-family: 'proxima nova';
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+body #hero .mac .window .logo i {
+  font-style: normal;
+}
+body #hero .mac .window .logo i:nth-child(1) {
+  color: #c0292e;
+}
+body #hero .mac .window .logo i:nth-child(2) {
+  color: #0063d0;
+}
+body #hero .mac .window .logo i:nth-child(3) {
+  color: #f4ae01;
+}
+body #hero .mac .window .logo i:nth-child(4) {
+  color: #85b716;
+}
+body #hero .mac .window .logo i:nth-child(5) {
+  color: #888;
+}
+body #hero .mac .window .itemcontainer {
+  overflow: auto;
+}
+body #hero .mac .window .itemcontainer img {
+  float: left;
+  width: 50%;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #bdd4de;
+}
+body #hero .mac .window .itemcontainer .rightblock {
+  float: left;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px;
+  padding-left: 20px;
+}
+body #hero .mac .window .itemcontainer .rightblock .line {
+  float: left;
+  width: 100%;
+  margin-bottom: 13px;
+  height: 8px;
+  background: #bdd4de;
+}
+body #hero .mac .window .itemcontainer .rightblock .line:last-of-type {
+  width: 60%;
+}
+body #hero .mac .window .itemcontainer .rightblock button {
+  color: #FFF;
+  background: #0063d0;
+  border-radius: 5px;
+  border: none;
+  margin: 0px;
+  font-family: 'Proxima Nova';
+  font-size: 30px;
+  padding: 10px;
+  outline: none;
+  margin-top: 10px;
+}
+body #hero .mac .window .reviews {
+  font-size: 24px;
+  font-family: 'Proxima Nova';
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #888;
+}
+body #hero .mac .window .review {
+  overflow: auto;
+  padding-left: 80px;
+  position: relative;
+  margin-bottom: 20px;
+}
+body #hero .mac .window .review .photo {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.8;
+}
+body #hero .mac .window .review .line {
+  float: left;
+  width: 100%;
+  margin-bottom: 12px;
+  height: 5px;
+  background: #bdd4de;
+}
+body #hero .mac .window .review .line:last-of-type {
+  width: 60%;
+}
