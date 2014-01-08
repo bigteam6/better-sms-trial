@@ -38,10 +38,93 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(85, 50, 133, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(85, 50, 133, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+}
+@-ms-keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(85, 50, 133, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(85, 50, 133, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+}
+@keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px rgba(85, 50, 133, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba(85, 50, 133, 0.7);
+  }
+}
 body {
   padding-top: 80px;
   margin: 0px;
   background: #333;
+}
+body .calltoaction {
+  margin: 60px 0px;
+  font-size: 32px;
+  padding: 20px;
+  font-family: 'Colfax';
+  border-radius: 3px;
+  border: none;
+  background: #0063d0;
+  color: #FFF;
+  outline: none;
+  height: 80px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body .calltoaction.grey {
+  background: #333;
+}
+body .calltoaction:active {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+body .underscore {
+  -webkit-animation: glow 1.2s infinite;
+  -moz-animation: glow 1.2s infinite;
+  -o-animation: glow 1.2s infinite;
+  animation: glow 1.2s infinite;
 }
 body #nav {
   position: fixed;
@@ -78,6 +161,7 @@ body #nav a {
 body #hero {
   background: #F0F0F0;
   margin: 0px;
+  padding: 10px 0px;
 }
 body #hero h1 {
   text-align: center;
@@ -87,12 +171,10 @@ body #hero h1 {
   color: #000;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-weight: 300;
 }
-body #hero h1 .underscore {
-  -webkit-animation: glow 0.8s infinite;
-  -moz-animation: glow 0.8s infinite;
-  -o-animation: glow 0.8s infinite;
-  animation: glow 0.8s infinite;
+body #hero h1 .subject {
+  font-weight: 400;
 }
 body #hero .mac {
   width: 700px;
@@ -104,11 +186,12 @@ body #hero .mac {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 40px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 0px;
   position: relative;
+  border-top: 1px solid #F6F6F6;
 }
 body #hero .mac .uibutton {
   position: absolute;
@@ -127,6 +210,9 @@ body #hero .mac .uibutton.yellow {
 body #hero .mac .uibutton.green {
   left: 55px;
 }
+body #hero .mac .uibutton.white {
+  right: 15px;
+}
 body #hero .mac .window {
   background: #FFF;
   -webkit-box-sizing: border-box;
@@ -138,7 +224,7 @@ body #hero .mac .window {
   -ms-user-select: none;
   user-select: none;
   cursor: default;
-  overflow-y: scroll;
+  overflow: hidden;
   height: 100%;
 }
 body #hero .mac .window .logo {
@@ -152,6 +238,7 @@ body #hero .mac .window .logo i {
 }
 body #hero .mac .window .logo i:nth-child(1) {
   color: #c0292e;
+  color: #e00000;
 }
 body #hero .mac .window .logo i:nth-child(2) {
   color: #0063d0;
@@ -170,7 +257,7 @@ body #hero .mac .window .itemcontainer {
 }
 body #hero .mac .window .itemcontainer img {
   float: left;
-  width: 50%;
+  width: 60%;
   padding: 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -179,7 +266,7 @@ body #hero .mac .window .itemcontainer img {
 }
 body #hero .mac .window .itemcontainer .rightblock {
   float: left;
-  width: 50%;
+  width: 40%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -199,14 +286,24 @@ body #hero .mac .window .itemcontainer .rightblock .line:last-of-type {
 body #hero .mac .window .itemcontainer .rightblock button {
   color: #FFF;
   background: #0063d0;
-  border-radius: 5px;
+  background: #553285;
+  border-radius: 30px;
   border: none;
   margin: 0px;
   font-family: 'Proxima Nova';
-  font-size: 30px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 10px 20px;
   outline: none;
   margin-top: 10px;
+}
+body #hero .mac .window .itemcontainer .rightblock button.active {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+body #hero .mac .window .itemcontainer .rightblock button.pulsate {
+  -webkit-animation: pulsate 1.2s infinite;
+  -moz-animation: pulsate 1.2s infinite;
+  -o-animation: pulsate 1.2s infinite;
+  animation: pulsate 1.2s infinite;
 }
 body #hero .mac .window .reviews {
   font-size: 24px;
@@ -220,6 +317,9 @@ body #hero .mac .window .review {
   padding-left: 80px;
   position: relative;
   margin-bottom: 20px;
+}
+body #hero .mac .window .review.short .line:last-of-type {
+  width: 30% !important;
 }
 body #hero .mac .window .review .photo {
   width: 60px;
@@ -249,4 +349,309 @@ body #hero .mac .window .review .line {
 }
 body #hero .mac .window .review .line:last-of-type {
   width: 60%;
+}
+body #hero .mac .mouse {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 24px;
+  display: none;
+}
+body #hero .ctacontainer {
+  text-align: center;
+}
+body #featureicons {
+  font-weight: 300;
+  color: #FFF;
+  font-family: 'Colfax';
+  background: #555;
+  padding: 20px 0px;
+}
+body #featureicons h1 {
+  text-align: center;
+  font-weight: normal;
+  font-family: 'Colfax';
+  font-size: 32px;
+  color: #FFF;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+body #featureicons .spacer {
+  float: left;
+  width: 50px;
+}
+body #featureicons .circle {
+  text-align: center;
+  background: #F0F0F0;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  margin-bottom: 40px;
+  float: left;
+  position: relative;
+}
+body #featureicons .circle .graphcaption {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  color: #0063d0;
+  font-weight: 400;
+}
+body #featureicons .arrow {
+  float: left;
+  width: 100px;
+  text-align: center;
+  height: 220px;
+  line-height: 220px;
+}
+body #featureicons .arrow img {
+  width: 40px;
+  vertical-align: middle;
+}
+body #featurelist {
+  font-weight: 300;
+  background: #F0F0F0;
+  font-family: 'Colfax';
+  font-size: 32px;
+  padding: 20px 0px;
+  text-align: center;
+}
+body #featurelist ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  margin: 15px auto;
+  width: 100%;
+}
+body #featurelist ul li {
+  text-align: center;
+  margin: 25px 0px;
+}
+body #featurelist ul li.ctacontainer button {
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+body .empty:after {
+  content: '.';
+  visiblity: hidden;
+  opacity: 0;
+  font-size: 0px;
+}
+body .cnvrt {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 15px;
+  width: auto;
+  height: 50px;
+  line-height: 52px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-family: 'Proxima Nova';
+  background: url('../img/dudes.png');
+  background: rgba(0, 0, 0, 0) url('../img/dudes.svg');
+  background-color: #553285;
+  background-repeat: no-repeat;
+  background-size: 36px 36px;
+  background-position: 5px 7px;
+  border-radius: 3px;
+  color: #FFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 20px;
+  z-index: 999000;
+  overflow: hidden;
+  padding-left: 40px;
+}
+body .cnvrt.pulsate {
+  -webkit-animation: pulsate 1.2s infinite;
+  -moz-animation: pulsate 1.2s infinite;
+  -o-animation: pulsate 1.2s infinite;
+  animation: pulsate 1.2s infinite;
+}
+body .cnvrt .item {
+  display: inline;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
+}
+body .cnvrt .item .suffix {
+  display: inline;
+}
+body .cnvrt .item.big {
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+body .cnvrt .item.speech {
+  padding-left: 40px;
+  margin-left: 0px;
+  background: url('../img/speechbubble.png');
+  background: rgba(0, 0, 0, 0) url('../img/speechbubble.svg');
+  background-size: 40px 60px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .cnvrt .item.speech .prefix {
+  display: inline;
+}
+body .cnvrt .item.speech .quote {
+  display: inline;
+  margin-left: 5px;
+  font-weight: bold !important;
+  max-width: 140px;
+}
+body .cnvrt .item.speech .quote:before {
+  content: "\"";
+}
+body .cnvrt .item.speech .quote:after {
+  content: "\".";
+}
+body .cnvrt .item.speech .suffix:after {
+  content: 'just wrote a comment.';
+}
+body .cnvrt .item.trophy {
+  padding-left: 40px;
+  margin-left: 0px;
+  background: url('../img/trophy_white.png');
+  background: rgba(0, 0, 0, 0) url('../img/trophy_white.svg');
+  background-size: 40px 60px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+body .cnvrt .item.trophy .suffix:after {
+  content: 'just liked this article.';
+}
+body .cnvrt .item.cnvrtlink {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 0px;
+  cursor: pointer;
+}
+body .cnvrt .item.cnvrtlink:before {
+  content: " ";
+}
+body .cnvrt .downarrow {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 100%;
+  background: url('../img/downarrow.png');
+  background: rgba(0, 0, 0, 0) url('../img/downarrow.svg');
+  background-size: 40px 60px;
+  background-position: center center;
+  -webkit-animation: bob 1s linear infinite;
+  -moz-animation: bob 1s linear infinite;
+  -o-animation: bob 1s linear infinite;
+  animation: bob 1s linear infinite;
+  cursor: pointer;
+}
+@-webkit-keyframes bob {
+  0% {
+    background-position: 0px -2px;
+  }
+  40% {
+    background-position: 0px 2px;
+  }
+  100% {
+    background-position: 0px -2px;
+  }
+}
+@-moz-keyframes bob {
+  0% {
+    background-position: 0px -2px;
+  }
+  40% {
+    background-position: 0px 2px;
+  }
+  100% {
+    background-position: 0px -2px;
+  }
+}
+@-ms-keyframes bob {
+  0% {
+    background-position: 0px -2px;
+  }
+  40% {
+    background-position: 0px 2px;
+  }
+  100% {
+    background-position: 0px -2px;
+  }
+}
+@-o-keyframes bob {
+  0% {
+    background-position: 0px -2px;
+  }
+  40% {
+    background-position: 0px 2px;
+  }
+  100% {
+    background-position: 0px -2px;
+  }
+}
+@keyframes bob {
+  0% {
+    background-position: 0px -2px;
+  }
+  40% {
+    background-position: 0px 2px;
+  }
+  100% {
+    background-position: 0px -2px;
+  }
+}
+body .cnvrt .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 20;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 2px -2px 10px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  opacity: 1;
+}
+body .cnvrt .close:after {
+  content: '✖';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  line-height: 17px;
+  text-align: center;
+  color: #e00000;
+  color: #FFF;
+  text-shadow: none;
+  font-size: 11px;
+}
+body .cnvrt:hover .close {
+  display: block;
 }
