@@ -69,7 +69,8 @@ module.exports = function(grunt) {
           //yuicompress: true
         },
         files: {
-          "./build/css/main.css": "./less/main.less"
+          "./build/css/main.css": "./less/main.less",
+          "./build/css/studies.css": "./less/studies.less"
         }
       }
     },
