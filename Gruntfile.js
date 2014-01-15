@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         options: {
           key: process.env.awsk,
           secret: process.env.awss,
-          bucket: 'cnvrt-site-production'
+          bucket: 'cnvrtapp.com'
         },
         sync: [
           {
