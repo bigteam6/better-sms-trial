@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         options: {
           key: 'AKIAJYCHO2DB6N5PGX2A',
           secret: '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',
-          bucket: 'panel.staging.matchchat.co.uk'
+          bucket: 'cnvrt-site-staging'
         },
         sync: [
           {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         options: {
           key: process.env.awsk,
           secret: process.env.awss,
-          bucket: 'mc-admin-app-production'
+          bucket: 'cnvrt-site-production'
         },
         sync: [
           {
