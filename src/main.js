@@ -1,75 +1,27 @@
-var entries = ["bookings","sales","users","donations","audience","subscribers"];
-var entrypos = 0;
-var stringpos = 0;
+document.querySelector("form").addEventListener("submit", function(e){
+	e.preventDefault();
 
-function loop(string, callback){
-	if(stringpos == string.length){
-		callback();
+	var input = document.querySelector("form input");
+
+	if(input.value === ""){
 		return;
-	} else {
-		$(".subject").html($(".subject").html() + string[stringpos]);
-		stringpos += 1;
 	}
 
-	setTimeout(function(){
-		loop(string, callback);
-	}, 80);
-}
+	// now post a new XHR request
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'https://zapier.com/hooks/catch/3frubg/');
+	// xhr.setRequestHeader("Accept", "application/json");
+	// xhr.setRequestHeader("Content-Type","application/json");
+	
+	xhr.onload = function(e) {
 
-function cycle(instantly){
-	if(instantly){
-		$(".graphcaption").html(entries[entrypos]);
-		loop(entries[entrypos], function(){
-			cycle();
-		});
-	} else {
-		stringpos = 0;
-		entrypos += 1;
-		if(entrypos == entries.length){entrypos = 0;}
-		
-		setTimeout(function(){
-			$(".subject").html("");
-			$(".graphcaption").html(entries[entrypos]);
-			loop(entries[entrypos], function(){
-				cycle();
-			});
-		}, 2000);
-	}
-}
+		if(!e.target.responseText){
+			console.log("ERRO ERROR ERRORO");
+			return;
+		}
 
-cycle(true);
+	};
 
-function animation(){
-	var obj = $(".mac .window");
-	var scrollheight = obj[0].scrollHeight;
-	var midway = scrollheight/2;
+	xhr.send( JSON.stringify( {mobile:encodeURIComponent(input.value)} ) );
 
-	$(".cnvrt").fadeIn(400, function(){
-		$(".cnvrt").addClass("pulsate");
-		obj.animate({scrollTop: scrollheight,opacity:0.2}, 1400, function(){
-			obj.find("button").addClass("pulsate");
-			setTimeout(function(){
-				obj.animate({scrollTop:0,opacity:1},700);
-
-				$(".mouse").fadeIn(200).animate({top:275,left:520},1400, function(){
-					setTimeout(function(){
-						obj.find("button").removeClass("pulsate").addClass("active");
-						setTimeout(function(){
-							obj.find("button").removeClass("active");
-							$(".mouse").fadeOut(1000, function(){
-								$(".mouse").css({
-									"top":"",
-									"left":"",
-								});
-								setTimeout(animation, 1000);
-							});
-							$(".cnvrt").fadeOut(1000).removeClass("pulsate");
-						},1000);
-					}, 1600);
-				});
-			}, 4000);
-		});
-	});
-}
-
-setTimeout(animation, 1000);
+});

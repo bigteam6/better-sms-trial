@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         options: {
           key: process.env.awsk,
           secret: process.env.awss,
-          bucket: 'cnvrtapp.com'
+          bucket: 'getconvert.com'
         },
         sync: [
           {
