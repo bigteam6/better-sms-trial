@@ -1,9 +1,11 @@
 {
-  "name": "MC-AdminApp",
+  "name": "Better-SMS-Website",
   "version": "3.0.0",
-  "description": "This is the app used at panel.matchchat.co.uk",
+  "description": "so ppl can sign up to better",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-gh-pages": "^1.0.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",

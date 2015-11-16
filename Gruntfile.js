@@ -104,7 +104,12 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'src/**/*.js',]
     },
 
-
+    'gh-pages': {
+      options: {
+        base: 'build'
+      },
+      src: ['**']
+    },
 
     watch: {
       files: [ "./src/**/*.js", "./less/**/*.less"],
@@ -119,12 +124,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-s3');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('all', 'Run main build process', function() {
     grunt.task.run(['jshint','less','copy','concat']);
   });
   grunt.registerTask('release', 'Run relase build process', function() {
-    grunt.task.run(['all','uglify']);
+    grunt.task.run(['all','gh-pages']);
   });
 
   grunt.registerTask('deploy', 'deployment task', function(target) {
