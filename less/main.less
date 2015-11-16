@@ -36,7 +36,6 @@ body{
 
 			nav{
 				height:80px;
-				overflow-y:auto;
 				line-height:80px;
 				margin-bottom:20px;
 
@@ -64,6 +63,16 @@ body{
 						font-size:24px;
 						margin-left:20px;
 					}
+				}
+
+				&:before,
+				&:after {
+				    content: " "; /* 1 */
+				    display: table; /* 2 */
+				}
+
+				&:after {
+				    clear: both;
 				}
 			}
 
