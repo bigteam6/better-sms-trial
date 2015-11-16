@@ -9,10 +9,10 @@ document.querySelector("form").addEventListener("submit", function(e){
 
 	// now post a new XHR request
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'https://zapier.com/hooks/catch/3frubg/');
+	xhr.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
 	// xhr.setRequestHeader("Accept", "application/json");
 	// xhr.setRequestHeader("Content-Type","application/json");
-	
+
 	xhr.onload = function(e) {
 
 		if(!e.target.responseText){
@@ -20,8 +20,10 @@ document.querySelector("form").addEventListener("submit", function(e){
 			return;
 		}
 
+		document.querySelector("form").classList.add("thanks");
+
 	};
 
-	xhr.send( JSON.stringify( {mobile:encodeURIComponent(input.value)} ) );
+	xhr.send();
 
 });

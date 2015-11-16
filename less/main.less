@@ -79,6 +79,22 @@ body{
 					vertical-align:middle;
 				}
 
+				&.thanks{
+					input, button{
+						display:none;
+					}
+
+					&:after{
+						line-height:40px;
+						font-family:@font;
+						font-size:24px;
+						padding:5px 0px;
+						color:#FFF;
+
+						content:'Thanks!';
+					}
+				}
+
 				input{
 					background:transparent;
 					color:#FFF;
