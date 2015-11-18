@@ -23,7 +23,7 @@ document.querySelector("form").addEventListener("submit", function(e){
 			return;
 		}
 
-		document.querySelector("form").classList.add("thanks");
+		document.querySelector("form").innerHTML = "Thanks! You should receive your first " + (window.location.pathname.indexOf("sms") > -1 ? "SMS" : "email") + " shortly.";
 
 	};
 
