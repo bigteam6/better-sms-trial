@@ -9,7 +9,6 @@ document.querySelector("form").addEventListener("submit", function(e){
 
 	// now post a new XHR request
 	var xhr = new XMLHttpRequest();
-	// xhr.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
 	
 	xhr.open('POST', 'http://52.32.231.54/signup/');
 
@@ -33,5 +32,11 @@ document.querySelector("form").addEventListener("submit", function(e){
 	};
 
 	xhr.send(JSON.stringify(payload));
+
+
+	//slack notification
+	var notify = new XMLHttpRequest();
+	notify.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
+	notify.send();
 
 });
