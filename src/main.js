@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", function(e){
 
 	// now post a new XHR request
 	var xhr = new XMLHttpRequest();
-	
+
 	xhr.open('POST', 'http://52.32.231.54/signup/');
 
 	xhr.setRequestHeader("Accept", "application/json");
@@ -19,6 +19,12 @@ document.querySelector("form").addEventListener("submit", function(e){
 
 		if(!e.target.responseText){
 			console.log("ERRO ERROR ERRORO");
+			return;
+		}
+
+		if (e.target.status === 400) {
+			var response = JSON.parse(e.target.responseText);
+			document.querySelector("form").innerHTML = response.message;
 			return;
 		}
 
