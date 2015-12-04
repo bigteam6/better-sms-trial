@@ -38,7 +38,7 @@
 
 	// now post a new XHR request
 	var xhr = new XMLHttpRequest();
-	
+
 	xhr.open('POST', 'http://52.32.231.54/signup/');
 
 	xhr.setRequestHeader("Accept", "application/json");
@@ -51,8 +51,18 @@
 			return;
 		}
 
+        if (e.target.status === 400) {
+			var response = JSON.parse(e.target.responseText);
+			document.querySelector("form").innerHTML = response.message;
+			return;
+		}
+
 		document.querySelector("form").innerHTML = "Thanks! You should receive your first " + (window.location.pathname.indexOf("sms") > -1 ? "SMS" : "email") + " shortly.";
 
+        //slack notification
+    	var notify = new XMLHttpRequest();
+    	notify.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
+    	notify.send();
 	};
 
 	var payload = {
@@ -61,11 +71,4 @@
 	};
 
 	xhr.send(JSON.stringify(payload));
-
-
-	//slack notification
-	var notify = new XMLHttpRequest();
-	notify.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
-	notify.send();
-
 });
