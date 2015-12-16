@@ -91,9 +91,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.js"></script>
 
 		<script>
-			if(smoothScroll !== undefined){
-				smoothScroll.init();
-			}
+			(function(){
+				if(smoothScroll !== undefined){
+					smoothScroll.init();
+				}
+			})();
 		</script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
