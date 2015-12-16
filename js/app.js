@@ -51,7 +51,7 @@
 			return;
 		}
 
-        if (e.target.status === 400) {
+		if (e.target.status === 400) {
 			var response = JSON.parse(e.target.responseText);
 			document.querySelector("form").innerHTML = response.message;
 			return;
@@ -59,10 +59,10 @@
 
 		document.querySelector("form").innerHTML = "Thanks! You should receive your first " + (window.location.pathname.indexOf("sms") > -1 ? "SMS" : "email") + " shortly.";
 
-        //slack notification
-    	var notify = new XMLHttpRequest();
-    	notify.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
-    	notify.send();
+		//slack notification
+		var notify = new XMLHttpRequest();
+		notify.open('GET', 'http://freeman-notifications.elasticbeanstalk.com/better-sms-signup?mobile=' + encodeURIComponent(input.value));
+		notify.send();
 	};
 
 	var payload = {
