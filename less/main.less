@@ -5,8 +5,10 @@
 }
 
 @orange: #f3a536;
+@green: #40A387;
 @blue: #6c9ecc;
 @white: #fdfdfd;
+@grey: #cdcdcd;
 @black: #383838;
 
 @font: ~"'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
@@ -21,7 +23,7 @@ body{
 	padding:0px;
 
 	font-family:@font;
-	color:#FFF;
+	color:@green;
 
 	*{
 		outline:none;
@@ -32,37 +34,21 @@ body{
 		padding:40px 0px;
 
 		&.flagship{
-			background:@orange;
+			background:@white;
+
+			text-align:center;
 
 			nav{
 				height:80px;
 				line-height:80px;
-				margin-bottom:20px;
-
-				a{
-					text-decoration:none;
-					color:#FFF;
-				}
+				margin-bottom:0px;
+				text-align:center;
 
 				.logo{
 					font-size:60px;
 					display:inline-block;
-					float:left;
 					margin:0px;
 					font-weight:normal;
-				}
-
-				.links{
-					list-style-type:none;
-					padding:0px;
-					margin:0px;
-					float:right;
-
-					li{
-						display:inline-block;
-						font-size:24px;
-						margin-left:20px;
-					}
 				}
 
 				&:before,
@@ -77,16 +63,40 @@ body{
 			}
 
 			p{
-				font-size:24px;
-				margin-bottom:120px;
-				line-height:34px;
+				font-size:21px;
+				margin-bottom:20px;
+				line-height:32px;
+
+				color:@black;
+
+				& span{
+					color:@green;
+				}
+
+				> a button{
+					background:@green;
+					border-radius:4px;
+					color:#FFF;
+					font-size:21px;
+					padding:20px;
+					border:none;
+					font-family:@font;
+					font-weight:500;
+					cursor:pointer;
+				}
 			}
 
 			form{
 				padding-top:20px;
+				margin-bottom:40px;
 
 				*{
 					vertical-align:middle;
+				}
+
+				p{
+					margin:20px auto;
+					font-size:16px;
 				}
 
 				&.thanks{
@@ -107,83 +117,100 @@ body{
 
 				input{
 					background:transparent;
-					color:#FFF;
-					border:3px solid #FFF;
+					color:@green;
+					border:2px solid @green;
 					border-radius:50px;
 
-					line-height:40px;
+					line-height:30px;
 					font-family:@font;
-					font-size:24px;
+					font-size:18px;
 
-					padding:5px 15px;
+					padding:4px 15px;
 
 					&:focus{
-						background:fade(#FFF, 20%);
+						background:fade(@green, 10%);
 					}
 
 					&::-webkit-input-placeholder {
-					  color: fade(#FFF, 70%);
+					  color:@grey;
 					}
 					&::-moz-placeholder { /* Firefox 19+ */
-					  color: fade(#FFF, 70%);
+					  color:@grey;
 					}
 					&:-ms-input-placeholder {
-					  color: fade(#FFF, 70%);
+					  color:@grey;
 					}
 					&:-moz-placeholder { /* Firefox 18- */
-					  color: fade(#FFF, 70%);
+					  color:@grey;
 					}
 				}
 
 				button{
-					background-color:transparent;
+					background-color:@green;
 					background-image:url(../img/check@2x.png);
 					background-size:24px 24px;
 					background-position:center center;
 					background-repeat:no-repeat;
 
 					color:#FFF;
-					border:3px solid #FFF;
+					border:3px solid @green;
 					border-radius:50px;
 
-					width:56px;
-					height:56px;
+					width:44px;
+					height:44px;
 
 					font-family:@font;
 					font-size:24px;
 					color:#FFF;
 
 					&:active{
-						background-color:fade(#FFF, 20%);
+						background-color:darken(@green, 10%);
+						border:3px solid darken(@green, 10%);
 					}
 				}
 			}
 
 			img{
 				width:100%;
+				max-width:380px;
 				vertical-align:bottom;
 				margin-bottom:40px;
+				margin-top:40px;
 			}
 		}
 
 		&.description{
 			text-align:center;
-			background:@blue;
+			background:@green;
+			color:@white;
+
+			text-align:center;
+
+			padding-bottom:0px;
+
+			*{
+				text-align:center;
+			}
 
 			h2{
 				font-weight:normal;
 				font-size:30px;
+				text-align:left;
 			}
 
 			p{
 				font-size:20px;
 				line-height:30px;
+				text-align:left;
 
 			}
 
 			img{
 				margin-top:20px;
 				width:100%;
+				max-width:380px;
+				vertical-align:bottom;
+				margin-right:-16%;
 			}
 		}
 
@@ -193,15 +220,23 @@ body{
 
 			padding:80px 0px;
 
+			text-align:center;
+
 			h2{
 				font-weight:normal;
 				font-size:30px;
 				margin-top:0px;
+
+				text-align:left;
+
+				color:@green;
 			}
 
 			p{
 				font-size:20px;
 				line-height:30px;
+
+				text-align:left;
 			}
 
 			.grid_6:first-child{
@@ -213,6 +248,7 @@ body{
 				margin:0px 0px;
 				vertical-align:middle;
 				margin-top:20px;
+				max-width:380px;
 			}
 		}
 	}
