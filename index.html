@@ -91,9 +91,23 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/7.1.1/js/smooth-scroll.js"></script>
 
 		<script>
-			if(smoothScroll !== undefined){
-				smoothScroll.init();
-			}
+			(function(){
+				if(smoothScroll !== undefined){
+					smoothScroll.init();
+				}
+			})();
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/favico.js/0.3.10/favico.min.js"></script>
+
+		<script>
+			(function(){
+				var favicon=new Favico();
+				var image = document.createElement("img");
+				image.src = "img/favicon.png";
+
+				favicon.image(image);
+			})();
 		</script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
