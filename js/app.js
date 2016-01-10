@@ -51,8 +51,9 @@
 			return;
 		}
 
+		var response = JSON.parse(e.target.responseText);
+
 		if (e.target.status === 400) {
-			var response = JSON.parse(e.target.responseText);
 			document.querySelector("form").innerHTML = response.message;
 			return;
 		}
